@@ -1,12 +1,12 @@
 'use strict';
-export const weekDayNames=[
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
+export const weekDayNames = [
+    "Sunday",    // 0
+    "Monday",    // 1
+    "Tuesday",   // 2
+    "Wednesday", // 3
+    "Thursday",  // 4
+    "Friday",    // 5
+    "Saturday"   // 6
 ];
 export const monthNames=[
     "Jan",
@@ -22,11 +22,10 @@ export const monthNames=[
     "Nov",
     "Dec"
 ];
-export const getDate = (dateUnix,timezone)=>{
-    const date = new Date((dateUnix+timezone)*1000);
-    const weekDayName = weekDayNames[date.getUTCDay()];
+export const getDate = (dateUnix, timezone) => {
+    const date = new Date((dateUnix + timezone) * 1000);
+    const weekDayName = weekDayNames[date.getUTCDay()]; 
     const monthName = monthNames[date.getUTCMonth()];
-
     return `${weekDayName} ${date.getUTCDate()} ${monthName}`;
 }
 export const getTime = (timeUnix, timezone) => {
